@@ -1,0 +1,3 @@
+[submodule "bibtex-refs"]
+	path = bibtex-refs
+	url = git@code.cs.uky.edu:seales-research/papers/bibtex-refs.git

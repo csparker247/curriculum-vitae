@@ -11,6 +11,21 @@
 
 \documentclass[letterpaper]{article}
 
+% Use biblatex instead of bibtex
+% Import bibtex refs
+\usepackage{import}
+\usepackage[
+    backend=biber,
+    style=verbose,
+    sorting=ydnt,
+    doi=false,
+    url=false,
+    eprint=false,
+    maxbibnames=99
+]{biblatex}
+\setlength\bibitemsep{0.5\baselineskip}
+\subimport{bibtex-refs/}{add-all-biblatex}
+
 \usepackage{hyperref}
 \usepackage{geometry}
 
@@ -21,11 +36,11 @@
 \usepackage[sc,osf]{mathpazo}
 
 % Set your name here
-\def\name{Harold Hotelling}
+\def\name{C. Seth Parker}
 
 % Replace this with a link to your CV if you like, or set it empty
 % (as in \def\footerlink{}) to remove the link in the footer:
-\def\footerlink{http://jblevins.org/projects/cv-template/}
+\def\footerlink{}
 
 % The following metadata will show up in the PDF properties
 \hypersetup{
@@ -84,70 +99,69 @@
 \vspace{0.25in}
 
 \begin{minipage}{0.45\linewidth}
-  \href{http://www.unc.edu/}{University of North Carolina} \\
-  Department of Statistics \\
-  Smith Building \\
-  Chapel Hill, NC 27599
+  \href{http://www.unc.edu/}{University of Kentucky} \\
+  Digital Restoration Initiative \\
+  Davis Marksbury Building \\
+  Lexington, KY 40506
 \end{minipage}
 \begin{minipage}{0.45\linewidth}
   \begin{tabular}{ll}
-    Phone: & (919) 962-1234 \\
-    Fax: &  (919) 962-5678 \\
-    Email: & \href{mailto:hotelling@unc.edu}{\tt hotelling@unc.edu} \\
-    Homepage: & \href{http://www.stat-or.unc.edu/}{\tt http://www.stat-or.unc.edu/} \\
+    Phone: & (859) 218-2044 \\
+    Email: & \href{mailto:c.seth.parker@uky.edu}{c.seth.parker@uky.edu} \\
+    Homepage: & \href{https://cs.uky.edu/dri}{https://cs.uky.edu/dri} \\
+    GitHub: & \href{https://github.com/csparker247}{csparker247} \\
   \end{tabular}
 \end{minipage}
 
 
-\section*{Personal}
-
-\begin{itemize}
-\item Born on September 29, 1895.
-\item United States Citizen.
-\end{itemize}
+% \section*{Personal}
+%
+% \begin{itemize}
+% \item Born on September 29, 1895.
+% \item United States Citizen.
+% \end{itemize}
 
 
 \section*{Education}
 
 \begin{itemize}
-  \item B.S. Journalism, Washington University, 1919.
+  \item B.A. Media and Communications, Asbury University, 2010.
 
-  \item M.A. Mathematics, Washington University, 1921.
-
-  \item Ph.D. Mathematics, Princeton University, 1924.
+  \item M.S. Computer Science, University of Kentucky, Expected May 2021.
 \end{itemize}
 
 
 \section*{Employment}
 
 \begin{itemize}
-\item Stanford University 1927--1931.
-\item Columbia University 1931--1946.
-\item University of North Carolina, 1946--1973.
+\item \textbf{Research Project Manager} Digital Restoration Initiative, University of Kentucky, 2013--present.
+\item \textbf{Video Production Coordinator} Center for Visualization and Virtual Environments, University of Kentucky, 2011-2018
 \end{itemize}
 
 
 \section*{Publications}
+\nocite{*}
+\printbibliography[keyword={csp}, heading=none]
 
-\subsection*{Journal Articles}
-
-\begin{itemize}
-\item A General Mathematical Theory of Depreciation, 1929, {\it Journal
-    of The American Statistical Association} 20, 340--353.
-\item Differential Equations Subject to Error, 1927, {\it Journal of The
-    American Statistical Association}.
-\item Applications of the Theory of Error to the Interpretation of
-  Trends (with H. Working), 1929, {\it Journal of the American
-    Statistical Association}.
-\end{itemize}
-
-\subsection*{Proceedings}
-
-\begin{itemize}
-\item A generalized T-Test and measure of multivariate dispersion,
-  Proc. Second Berkeley Symposium of Mathematical Statistics and
-  Probability, 1951.
-\end{itemize}
+% \subsection*{Journal Articles}
+%
+% \begin{itemize}
+% \item A General Mathematical Theory of Depreciation, 1929, {\it Journal
+%     of The American Statistical Association} 20, 340--353.
+% \item Differential Equations Subject to Error, 1927, {\it Journal of The
+%     American Statistical Association}.
+% \item Applications of the Theory of Error to the Interpretation of
+%   Trends (with H. Working), 1929, {\it Journal of the American
+%     Statistical Association}.
+% \end{itemize}
+%
+% \subsection*{Proceedings}
+%
+% \begin{itemize}
+% \item A generalized T-Test and measure of multivariate dispersion,
+%   Proc. Second Berkeley Symposium of Mathematical Statistics and
+%   Probability, 1951.
+% \end{itemize}
 
 \bigskip
 
