@@ -6,7 +6,7 @@ name: CI
 # events but only for the master branch
 on:
   push:
-    branches: [ master, github-builds ]
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -41,11 +41,11 @@ jobs:
 
     # Rename doc
     - name: Rename the compressed document
-      run: cp build/cv-compressed.pdf $(date +%Y%m%d_%H%M%S)-CSP-CV.pdf
+      run: cp build/cv-compressed.pdf $(TZ=America/New_York date +%Y%m%d_%H%M%S)-CSP-CV.pdf
 
     # Upload pdf
     - name: Upload PDF
       uses: actions/upload-artifact@v2
       with:
-        name: pdf
+        name: PDF
         path: '*-CSP-CV.pdf'
