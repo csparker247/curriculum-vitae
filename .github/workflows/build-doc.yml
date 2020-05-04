@@ -6,7 +6,7 @@ name: CI
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [ master, github-builds ]
   pull_request:
     branches: [ master ]
 
@@ -22,13 +22,13 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Checkout
       uses: actions/checkout@master
-    
+
     - name: Checkout submodule manually
       run: git clone https://oauth2:${{ secrets.GITLAB_PULL_TOKEN }}@code.cs.uky.edu/seales-research/papers/bibtex-refs.git
-    
+
     - name: Install latex
       run: sudo apt-get install texlive
 
     # Build the document
     - name: Build and compress the document
-      run: make
+      run: make debug
