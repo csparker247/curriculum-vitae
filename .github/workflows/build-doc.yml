@@ -22,13 +22,30 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Checkout
       uses: actions/checkout@master
-    
+
     - name: Checkout submodule manually
       run: git clone https://oauth2:${{ secrets.GITLAB_PULL_TOKEN }}@code.cs.uky.edu/seales-research/papers/bibtex-refs.git
-    
+
     - name: Install latex
-      run: sudo apt-get install texlive
+      run: |
+        sudo apt-get install \
+        texlive \
+        texlive-latex-extra \
+        texlive-latex-recommended \
+        texlive-luatex \
+        texlive-bibtex-extra biber
 
     # Build the document
     - name: Build and compress the document
       run: make
+
+    # Rename doc
+    - name: Rename the compressed document
+      run: cp build/cv-compressed.pdf $(TZ=America/New_York date +%Y%m%d_%H%M%S)-CSP-CV.pdf
+
+    # Upload pdf
+    - name: Upload PDF
+      uses: actions/upload-artifact@v2
+      with:
+        name: PDF
+        path: '*-CSP-CV.pdf'
