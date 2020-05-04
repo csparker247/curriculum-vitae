@@ -37,4 +37,14 @@ jobs:
 
     # Build the document
     - name: Build and compress the document
-      run: make debug
+      run: make
+
+    # Rename doc
+    - name: Rename the compressed document
+      run: cp build/cv-compressed.pdf $(date +%Y%m%d_%H%M%S)-CSP-CV.pdf
+
+    # Upload pdf on failure
+    - uses: actions/upload-artifact@v2
+        with:
+          name: pdf
+          path: *-CSP-CV.pdf
