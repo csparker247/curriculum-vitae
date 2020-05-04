@@ -43,8 +43,9 @@ jobs:
     - name: Rename the compressed document
       run: cp build/cv-compressed.pdf $(date +%Y%m%d_%H%M%S)-CSP-CV.pdf
 
-    # Upload pdf on failure
-    - uses: actions/upload-artifact@v2
+    # Upload pdf
+    - name: Upload PDF
+      uses: actions/upload-artifact@v2
       with:
         name: pdf
         path: *-CSP-CV.pdf
