@@ -12,8 +12,6 @@
 \documentclass[letterpaper]{article}
 
 % Use biblatex instead of bibtex
-% Import bibtex refs
-\usepackage{import}
 \usepackage[
     backend=biber,
     style=verbose,
@@ -24,10 +22,15 @@
     maxbibnames=99
 ]{biblatex}
 \setlength\bibitemsep{0.5\baselineskip}
-\subimport{bibtex-refs/}{add-all-biblatex}
 
+% Import bibtex refs
+\input{bibtex-refs/add-all-biblatex}
+
+% Other packages
 \usepackage{hyperref}
 \usepackage{geometry}
+\usepackage{tabularx}
+\usepackage[none]{hyphenat}
 
 % Comment the following lines to use the default Computer Modern font
 % instead of the Palatino font provided by the mathpazo package.
@@ -47,7 +50,7 @@
   colorlinks = true,
   urlcolor = black,
   pdfauthor = {\name},
-  pdfkeywords = {economics, statistics, mathematics},
+  pdfkeywords = {computer science, computer vision, digital humanities},
   pdftitle = {\name: Curriculum Vitae},
   pdfsubject = {Curriculum Vitae},
   pdfpagemode = UseNone
@@ -132,13 +135,11 @@
 
 
 \section*{Employment}
-
-\begin{itemize}
-\item \textbf{Research Project Manager} Digital Restoration Initiative, University of Kentucky, Lexington, KY, 2013--present.
-
-\item \textbf{Video Production Coordinator}, Center for Visualization and Virtual Environments, University of Kentucky, Lexington, KY, 2011-2018.
-\end{itemize}
-
+\renewcommand{\arraystretch}{1.5}
+\begin{tabularx}{\linewidth}{lX}
+  2013--present & Research Project Manager, Digital Restoration Initiative, University of Kentucky, Lexington, KY. \\
+  2011--2018 & Video Production Coordinator, Center for Visualization and Virtual Environments, University of Kentucky, Lexington, KY. \\
+\end{tabularx}
 
 \section*{Publications}
 \nocite{*}
