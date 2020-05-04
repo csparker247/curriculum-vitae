@@ -45,6 +45,6 @@ jobs:
 
     # Upload pdf on failure
     - uses: actions/upload-artifact@v2
-        with:
-          name: pdf
-          path: *-CSP-CV.pdf
+      with:
+        name: pdf
+        path: *-CSP-CV.pdf
