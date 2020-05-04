@@ -27,7 +27,7 @@ jobs:
       run: git clone https://oauth2:${{ secrets.GITLAB_PULL_TOKEN }}@code.cs.uky.edu/seales-research/papers/bibtex-refs.git
 
     - name: Install latex
-      run: sudo apt-get install texlive texlive-bibtex-extra biber
+      run: sudo apt-get install texlive-full texlive-bibtex-extra biber
 
     # Build the document
     - name: Build and compress the document
