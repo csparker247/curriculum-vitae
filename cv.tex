@@ -25,6 +25,7 @@
 
 % Import bibtex refs
 \input{bibtex-refs/add-all-biblatex}
+\addbibresource{bibs/presentations.bib}
 
 % Other packages
 \usepackage{hyperref}
@@ -155,6 +156,8 @@
     type={incollection}
 }
 \printbibliography[filter=books, keyword={csp}, heading=subbibliography, title={Books and Anthologies}]
+
+\printbibliography[type={unpublished}, keyword={csp}, heading=subbibliography, title={Lectures and Presentations}]
 
 \bigskip
 

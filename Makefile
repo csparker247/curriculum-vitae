@@ -4,7 +4,8 @@ DEBUG_LOG_PDF=$(OUTPUT_DIR)/debug-pdf.log
 DEBUG_LOG_DOCX=$(OUTPUT_DIR)/debug-docx.log
 
 TEX=lualatex
-TEX_FLAGS=--output-dir=$(OUTPUT_DIR)
+TEX_FLAGS=--interaction=nonstopmode --file-line-error --output-dir=$(OUTPUT_DIR)
+TEX_FLAGS_DEBUG=--file-line-error --output-dir=$(OUTPUT_DIR)
 
 BIB=biber
 BIB_FLAGS=--input-directory=bibtex-refs/
@@ -40,13 +41,13 @@ paper: | setup $(MAIN_FILE).tex
 debug: | setup $(MAIN_FILE).tex
 	@echo "Making PDF:"
 	# Generate temp output
-	@$(TEX) $(TEX_FLAGS) $(MAIN_FILE).tex
+	@$(TEX) $(TEX_FLAGS_DEBUG) $(MAIN_FILE).tex
 	# Collect bib refs
 	@$(BIB) $(BIB_FLAGS) $(OUTPUT_DIR)/$(MAIN_FILE).bcf
 	# Put refs in bibliography
-	@$(TEX) $(TEX_FLAGS) $(MAIN_FILE).tex
+	@$(TEX) $(TEX_FLAGS_DEBUG) $(MAIN_FILE).tex
 	# Link in-text refs to bibliography numbering
-	@$(TEX) $(TEX_FLAGS) $(MAIN_FILE).tex
+	@$(TEX) $(TEX_FLAGS_DEBUG) $(MAIN_FILE).tex
 	# Complete
 
 # Create a compressed PDF
