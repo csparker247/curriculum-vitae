@@ -33,7 +33,8 @@ jobs:
         texlive-latex-extra \
         texlive-latex-recommended \
         texlive-luatex \
-        texlive-bibtex-extra biber
+        texlive-bibtex-extra biber \
+        latexmk
 
     # Build the document
     - name: Build and compress the document
