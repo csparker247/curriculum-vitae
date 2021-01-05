@@ -9,7 +9,7 @@ $out_dir = 'build';
 END {
   if($cleanup_mode == 0) {
     system("gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -dDownsampleColorImages=true -dColorImageResolution=300 -dNOPAUSE -dQUIET -dBATCH -sOutputFile=\"${out_dir}/cv-compressed.pdf\" \"${out_dir}/cv.pdf\"");
-  } elsif($cleanup_mode == 1 && -e "${out_dir}/main-compressed.pdf") {
-    unlink("${out_dir}/main-compressed.pdf");
+  } elsif($cleanup_mode == 1 && -e "${out_dir}/cv-compressed.pdf") {
+    unlink("${out_dir}/cv-compressed.pdf");
   }
 }
