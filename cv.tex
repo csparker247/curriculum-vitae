@@ -16,9 +16,9 @@
     backend=biber,
     style=verbose,
     sorting=ydnt,
-    doi=false,
     url=false,
     eprint=false,
+    dashed=false,
     maxbibnames=99
 ]{biblatex}
 \setlength\bibitemsep{0.5\baselineskip}
@@ -204,8 +204,11 @@
   2011--2018 & Video Production Coordinator, Center for Visualization and Virtual Environments, University of Kentucky, Lexington, KY. \\
 \end{tabularx}
 
-\section*{Publications}
+\section*{Projects and Software}
 \nocite{*}
+\printbibliography[type={misc}, keyword={csp}, heading=none]
+
+\section*{Publications}
 
 \printbibliography[type={article}, keyword={csp}, heading=subbibliography, title={Journal Articles}]
 
