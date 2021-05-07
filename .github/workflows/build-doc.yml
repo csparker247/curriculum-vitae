@@ -37,7 +37,9 @@ jobs:
 
     # Rename doc
     - name: Rename the compressed document
-      run: cp build/cv-compressed.pdf $(TZ=America/New_York date +%Y%m%d_%H%M%S)-CSP-CV.pdf
+      run: |
+        cp build/cv.pdf $(TZ=America/New_York date +%Y%m%d_%H%M%S)-CSP-CV.pdf && \
+        cp build/cv.pdf curriculum-vitae.pdf
 
     # Upload pdf
     - name: Upload PDF
@@ -45,3 +47,15 @@ jobs:
       with:
         name: PDF
         path: '*-CSP-CV.pdf'
+
+    # Push to github.io site
+    - name: Push a file to another repository
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source_file: 'curriculum-vitae.pdf'
+        destination_repo: 'csparker247/csparker247.github.io'
+        user_email: 'csparker247@gmail.com'
+        user_name: 'csparker247'
+        commit_message: 'Update CV'
