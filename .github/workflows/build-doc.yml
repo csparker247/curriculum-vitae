@@ -48,8 +48,8 @@ jobs:
         name: PDF
         path: '*-CSP-CV.pdf'
 
-    # Push to github.io site
-    - name: Push a file to another repository
+    # Push pdf to github.io site
+    - name: Push CV to github.io repo
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
