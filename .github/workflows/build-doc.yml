@@ -41,7 +41,7 @@ jobs:
         cp build/cv.pdf $(TZ=America/New_York date +%Y%m%d_%H%M%S)-CSP-CV.pdf && \
         cp build/cv.pdf curriculum-vitae.pdf
 
-    # Upload pdf
+    # Upload pdf artifact
     - name: Upload PDF
       uses: actions/upload-artifact@v2
       with:
@@ -50,6 +50,7 @@ jobs:
 
     # Push pdf to github.io site
     - name: Push CV to github.io repo
+      if: github.ref == 'refs/heads/master'
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
