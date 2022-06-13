@@ -17,9 +17,8 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - name: Checkout
       uses: actions/checkout@master
-
-    - name: Checkout submodule manually
-      run: git submodule update --init
+      with:
+        submodules: 'true'
 
     - name: Install latex
       run: |
