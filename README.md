@@ -12,8 +12,6 @@ When cloning, don't forget to get the Bib file submodule:
 git clone --recurse-submodules git@github.com:csparker247/curriculum-vitae.git
 ```
 
-**Note:** External references are currently a private submodule, so don't be surprised if it fails to download.
-
 ## Build
 
 This project is configured and built using `latexmk`. To build a PDF, simply run

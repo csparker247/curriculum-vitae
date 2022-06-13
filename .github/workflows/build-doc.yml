@@ -19,7 +19,7 @@ jobs:
       uses: actions/checkout@master
 
     - name: Checkout submodule manually
-      run: git clone https://oauth2:${{ secrets.GITLAB_PULL_TOKEN }}@code.cs.uky.edu/seales-research/papers/bibtex-refs.git
+      run: git submodule update --init
 
     - name: Install latex
       run: |
