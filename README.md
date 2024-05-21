@@ -1,8 +1,10 @@
 # curriculum-vitae
 
-[![CI](https://github.com/csparker247/curriculum-vitae/workflows/CI/badge.svg?branch=master)](https://github.com/csparker247/curriculum-vitae/actions)
+[![CI](https://github.com/csparker247/curriculum-vitae/workflows/CI/badge.svg?branch=main)](https://github.com/csparker247/curriculum-vitae/actions)
 
-CV implemented in Latex. A zip archive containing the latest PDF version can be downloaded [here](https://nightly.link/csparker247/curriculum-vitae/workflows/build-doc/master/PDF.zip).
+CV implemented in Latex. Download the latest version: 
+[[PDF]](https://csparker247.github.io/curriculum-vitae.pdf)
+[[ZIP]](https://nightly.link/csparker247/curriculum-vitae/workflows/build-doc/main/PDF.zip)
 
 ## Get the source
 
@@ -22,8 +24,7 @@ latexmk
 ```
 
 All outputs and temp files will be placed in a new subdirectory `build/`. The
-final PDF can be found in `build/cv.pdf`. A compressed version can be found in
-`build/cv-compressed.pdf`.
+final PDF can be found in `build/cv.pdf`.
 
 ### Build with make (optional)
 Some of us have built-in muscle memory for running `make` whenever we want to
