@@ -1,6 +1,6 @@
 # curriculum-vitae
 
-[![CI](https://github.com/csparker247/curriculum-vitae/workflows/CI/badge.svg?branch=main)](https://github.com/csparker247/curriculum-vitae/actions)
+[![CI](https://github.com/csparker247/curriculum-vitae/actions/workflows/build-doc.yml/badge.svg)](https://github.com/csparker247/curriculum-vitae/actions/workflows/build-doc.yml)
 
 CV implemented in Latex. Download the latest version: 
 [[PDF]](https://csparker247.github.io/curriculum-vitae.pdf)
